@@ -1,11 +1,13 @@
 package com.exam.model;
 
-import java.util.Date;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+
 
 @Entity
 public class Employee {
@@ -16,7 +18,8 @@ public class Employee {
 	private long id;
 	private String first_name;
 	private String surname;
-	private Date dob;
+
+	private String dob;
 	private String gender;
 	private String email;
 	private String contact_no;
@@ -24,7 +27,8 @@ public class Employee {
 	private String department;
 	private String designation;
 	private String status;
-	private Date doh;
+
+	private String doh;
 	private double basic_salary;
 	private String username;
 	private String password;
@@ -50,10 +54,10 @@ public class Employee {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public Date getDob() {
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(Date dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	public String getGender() {
@@ -98,10 +102,10 @@ public class Employee {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Date getDoh() {
+	public String getDoh() {
 		return doh;
 	}
-	public void setDoh(Date doh) {
+	public void setDoh(String doh) {
 		this.doh = doh;
 	}
 	public double getBasic_salary() {

@@ -60,8 +60,7 @@
 
 
 			<label>Date of Birth</label> <input type="date" class="form-control"
-				name="dob_start" value="yyyy-MM-dd" min="1900-01-01"
-				max="2100-12-31">
+				name="dob">
 
 		</div>
 
@@ -137,7 +136,7 @@
 
 
 	<label >Date of Hired</label> <input
-		type="date" class="form-control" name="doh_start" value="yyyy-MM-dd" min="1900-01-01" max="2100-12-31"
+		type="date" class="form-control" name="doh"
 		>
 
 </div>

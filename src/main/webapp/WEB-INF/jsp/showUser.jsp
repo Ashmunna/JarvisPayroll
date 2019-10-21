@@ -37,6 +37,7 @@
 	<c:if test='${Boolean.parseBoolean(error)}'>
 		<div class="alert alert-danger">${message}</div>
 	</c:if>
+	<div class="container-fluid" style="overflow-x:auto;" >
 	<table class="table">
 		<thead>
 			<tr>
@@ -62,7 +63,7 @@
 			<tr>
 				<td>${user.first_name}</td>
 				<td>${user.surname}</td>
-				
+				<td>${user.dob}</td>
 				<td>${user.gender}</td>
 				<td>${user.email}</td>
 				<td>${user.contact_no}</td>
@@ -70,7 +71,7 @@
 				<td>${user.department}</td>
 				<td>${user.designation}</td>
 				<td>${user.status}</td>
-				
+				<td>${user.doh}</td>
 				<td>${user.basic_salary}</td>
 				<td>${user.username}</td>
 				<td>${user.password}</td>
@@ -83,6 +84,9 @@
 		</c:forEach>
 		</tbody>
 	</table>
+	
+	</div>
+	
 
 </div>
 
