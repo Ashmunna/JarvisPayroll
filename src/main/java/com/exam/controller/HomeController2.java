@@ -38,14 +38,17 @@ public class HomeController2 {
 		return new ModelAndView("admin");
 	}
 	
+	
 	@GetMapping(value = "/user")
 	public ModelAndView user() {
 		return new ModelAndView("user");
 	}
 	
-//	@GetMapping(value = "/showUser")
-//	public ModelAndView showUser() {
-//		return new ModelAndView("showUser");
-//	}
+	@GetMapping(value = "/register")
+	public ModelAndView user1Registration() {
+		return new ModelAndView("user1Registration");
+	}
+	
+	
 	
 }

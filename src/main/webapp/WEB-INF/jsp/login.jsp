@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 
 
-<jsp:include page="header.jsp" />
+
 
 
 
@@ -11,12 +11,12 @@
                 
                 <div class="col-md-6 login-form-2">
                     <h3>User Login</h3>
-                    <form >
+                    <form name='f' action="/login" method='POST'>
                         <div class="form-group" style="width: 300px" >
-                            <input type="text" class="form-control" placeholder="Your Username *" value="" />
+                            <input type="text" name="username" class="form-control" placeholder="Your Username *" value="" />
                         </div>
                         <div class="form-group"  style="width: 300px">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password" name="password" class="form-control" placeholder="Your Password *" value="" />
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-success" value="Login" />
@@ -24,6 +24,10 @@
                         <div class="form-group">
 
                             <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
+                        </div>
+                       <div class="form-group">
+
+                            <a href="/register" value="Registration"> Registration </a>
                         </div>
                     </form>
                 </div>
@@ -34,4 +38,3 @@
 
             
             
-<jsp:include page="footer.jsp" />

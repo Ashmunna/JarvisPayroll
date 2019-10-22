@@ -32,10 +32,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.exceptionHandling()
 			.and()
 			.authorizeRequests()
-				.antMatchers("/login","/register").permitAll()
+				.antMatchers("/login","/register", "/save").permitAll()
 				.antMatchers("/**").authenticated()				
 			.and()
 			.formLogin()
+			.loginPage("/login")
+			.defaultSuccessUrl("/login-success", true)
 			.and()
 			.logout();
 			
