@@ -18,6 +18,15 @@
                         <div class="form-group"  style="width: 300px">
                             <input type="password" name="password" class="form-control" placeholder="Your Password *" value="" />
                         </div>
+                        
+                        <div class="form-group">
+                            <label>Role</label> <select class="form-control"
+                                name="role">
+                                <option value="admin">admin</option>
+                                <option value="user">user</option>
+                            </select>
+                        </div>
+                        
                         <div class="form-group">
                             <input type="submit" class="btn btn-success" value="Login" />
                         </div>

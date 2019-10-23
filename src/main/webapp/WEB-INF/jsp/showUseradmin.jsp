@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="header.jsp" />
+	
+<jsp:include page="header_admin.jsp" />
 
 <header>
 	<style>
@@ -53,7 +54,7 @@
 				<td>Status</td>
 				<td>Date of Hired</td>
 				<td>Basic Salary</td>
-				<!-- <td>Username</td>
+				<!--  <td>Username</td>
 				<td>Password</td> -->
 				
 				<td>Action</td>
@@ -74,8 +75,10 @@
 				<td>${user.status}</td>
 				<td>${user.doh}</td>
 				<td>${user.basic_salary}</td>
-				<!-- <td>${user.username}</td>
-				<td>${user.password}</td> -->
+				<!--
+				<td>${user.username}</td>
+				<td>${user.password}</td>
+				  -->
 				
 				
 				<td>

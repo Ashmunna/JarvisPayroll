@@ -26,7 +26,7 @@ import com.exam.service.EmployeeService;
 
 
 @Controller
-public class EmployeeRegistrationController {
+public class EmployeeRegistrationControlleradmin {
 	
 //	@InitBinder
 //    public void dataInitBinder(WebDataBinder binder) {
@@ -42,8 +42,8 @@ public class EmployeeRegistrationController {
 //    @Autowired
 //    PasswordEncoder passwordEncoder;
    
-    @PostMapping("/userRegistration")
-    public ModelAndView userRegistration(HttpServletRequest request) {
+    @PostMapping("/userRegistrationadmin")
+    public ModelAndView userRegistrationadmin(HttpServletRequest request) {
     	
         Map<String, Object> model = new HashMap<>();
         
@@ -95,11 +95,11 @@ public class EmployeeRegistrationController {
         if (employee != null) {
             model.put("success", true);
             model.put("message", "Save Successful");
-            return new ModelAndView("employee_registration", model);
+            return new ModelAndView("employee_registration_admin", model);
         }else {
             model.put("error", false);
             model.put("message", "Save failed");
-            return new ModelAndView("employee_registration", model);
+            return new ModelAndView("employee_registration_admin", model);
         }
     }
     
@@ -120,12 +120,12 @@ public class EmployeeRegistrationController {
 //    }
     
     
-    @GetMapping("/showUser")
+    @GetMapping("/showUseradmin")
     public ModelAndView showAll() {
         Map<String, Object> model = new HashMap<>();
         List <Employee> entityList  =  employeeService.getAll();
         model.put("userList", entityList);
-        return new ModelAndView("/showUser", model);
+        return new ModelAndView("/showUseradmin", model);
     }
 
     

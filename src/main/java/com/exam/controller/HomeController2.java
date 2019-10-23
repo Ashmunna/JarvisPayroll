@@ -27,18 +27,34 @@ public class HomeController2 {
 		return new ModelAndView("employee_registration");
 	}
 	
+	@GetMapping(value = "/employee_registration_admin")
+	public ModelAndView employee_registration_admin() {
+		return new ModelAndView("employee_registration_admin");
+	}
+	
+	@GetMapping(value = "/employeeAllowance")
+	public ModelAndView employeeAllowance() {
+		return new ModelAndView("employeeAllowance");
+	}
+	
 
 	@GetMapping(value = "/contact")
 	public ModelAndView contact() {
 		return new ModelAndView("contact");
 	}
 	
+	@GetMapping(value = "/logout")
+	public ModelAndView logout() {
+		return new ModelAndView("login");
+	}
+	
+	
 	@GetMapping(value = "/admin")
 	public ModelAndView admin() {
 		return new ModelAndView("admin");
 	}
 	
-	
+
 	@GetMapping(value = "/user")
 	public ModelAndView user() {
 		return new ModelAndView("user");

@@ -143,16 +143,34 @@ public class LoginController {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipalName = authentication.getName();
 		List<GrantedAuthority> roles = (List<GrantedAuthority>) authentication.getAuthorities();
+		
 		if(roles.get(0).getAuthority().equalsIgnoreCase("user")) {
 			return new ModelAndView("login-success");
-		}
-		
-		if(roles.get(0).getAuthority().equalsIgnoreCase("admin")) {
-			return new ModelAndView("login-success");
-		}
+		}else if(roles.get(0).getAuthority().equalsIgnoreCase("admin")) {
+				return new ModelAndView("login-success-admin");
+			}
 		
 		return null;
 	}
+	
+	
+	
+	 
+//	  @GetMapping(value = "/login-success-admin")
+//		public ModelAndView loginsuccessadmin() {
+//			
+//			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//			String currentPrincipalName = authentication.getName();
+//			List<GrantedAuthority> roles = (List<GrantedAuthority>) authentication.getAuthorities();
+//			
+//			if(roles.get(0).getAuthority().equalsIgnoreCase("admin")) {
+//				return new ModelAndView("login-success-admin");
+//			}
+//			
+//			return null;
+//		}
+	
+	
 	
 
 	
