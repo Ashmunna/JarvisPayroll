@@ -52,7 +52,7 @@
                                     <a class="nav-link" href="/login-success-admin">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/about">About</a>
+                                    <a class="nav-link" href="/about_admin">About</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
@@ -72,7 +72,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="/employeeAllowance"> Employee Allowance</a>
-                                        <a class="dropdown-item" href="single-blog.html"> Employee Deduction</a>
+                                        <a class="dropdown-item" href="/employeeAllowanceDeduction"> Employee Allowance Deduction</a>
                                         <a class="dropdown-item" href="single-blog.html"> Employee Salary Update</a>
                                     </div>
                                 </li>
@@ -83,7 +83,7 @@
                                         Salary Reports
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.html"> Employee Salary Sheet</a>
+                                        <a class="dropdown-item" href="/employeeSalarySheet"> Employee Salary Sheet</a>
                                         <a class="dropdown-item" href="single-blog.html"> Employee Total Allowance Reports</a>
                                         <a class="dropdown-item" href="single-blog.html"> Employee Total Deduction Reports</a>
                                     </div>
@@ -100,7 +100,7 @@
                                 </li>
                                 
                                  <li class="nav-item">
-                                    <a class="nav-link" href="/">Payment</a>
+                                    <a class="nav-link" href="/payment">Payment</a>
                                 </li>
                                 <!--  <li class="nav-item">
                                     <a class="nav-link" href="/contact">Contact</a>

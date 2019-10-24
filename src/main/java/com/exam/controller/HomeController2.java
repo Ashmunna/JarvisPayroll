@@ -22,6 +22,13 @@ public class HomeController2 {
 		return new ModelAndView("about");
 	}
 	
+	@GetMapping(value = "/about_admin")
+	public ModelAndView aboutadmin() {
+		return new ModelAndView("about_admin");
+	}
+	
+
+	
 	@GetMapping(value = "/employee_registration")
 	public ModelAndView employee_registration() {
 		return new ModelAndView("employee_registration");
@@ -37,7 +44,12 @@ public class HomeController2 {
 		return new ModelAndView("employeeAllowance");
 	}
 	
-
+	@GetMapping(value = "/employeeAllowanceDeduction")
+	public ModelAndView employeeAllowanceDeduction() {
+		return new ModelAndView("/employeeAllowanceDeduction");
+	}
+	
+	
 	@GetMapping(value = "/contact")
 	public ModelAndView contact() {
 		return new ModelAndView("contact");
@@ -48,22 +60,37 @@ public class HomeController2 {
 		return new ModelAndView("login");
 	}
 	
-	
-	@GetMapping(value = "/admin")
-	public ModelAndView admin() {
-		return new ModelAndView("admin");
+	@GetMapping(value = "/login-success-admin")
+	public ModelAndView loginsuccessadmin() {
+		return new ModelAndView("login-success-admin");
 	}
 	
-
-	@GetMapping(value = "/user")
-	public ModelAndView user() {
-		return new ModelAndView("user");
-	}
 	
 	@GetMapping(value = "/register")
 	public ModelAndView user1Registration() {
 		return new ModelAndView("user1Registration");
 	}
+	
+	
+	@GetMapping(value = "/payment")
+	public ModelAndView payment() {
+		return new ModelAndView("payment");
+	}
+	
+	@GetMapping(value = "/employeeSalarySheet")
+	public ModelAndView employeeSalarySheet() {
+		return new ModelAndView("employeeSalarySheet");
+	}
+	
+	
+	@GetMapping(value = "/totalAllowanceReport")
+	public ModelAndView totalAllowanceReport() {
+		return new ModelAndView("totalAllowanceReport");
+	}
+	
+	
+	
+	
 	
 	
 	

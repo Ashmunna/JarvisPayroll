@@ -40,46 +40,45 @@
 		<div class="alert alert-danger">${message}</div>
 	</c:if>
 	<br><br>
-	<form action="/showUseradmin/{id}" method="post">
+	
 	<div class="form-group">
 			<label>Search Employee</label> <input type="search" name="search"
 				class="form-control" placeholder="Search Employee By Id"
 				required="">
-				<button type="submit" class="btn btn-success "> Search </button>
-	    </div>
-      </form>
+	</div>
 
-	<form action="/caculatSalary" method="post">
+
+	<form action="/employeeAllowanceDeduction" method="post">
 	
 		<div class="form-group">
 			<label>Employee Id</label> <input type="number" name="id"
 				class="form-control" placeholder=""
-				required="" value="${userList.id}">
+				required="">
 		</div>
 
 		<div class="form-group">
 			<label>First Name</label> <input type="text" name="fName"
 				class="form-control" placeholder="Write Employee First Name"
-				required="" value="${userList.first_name}">
+				required="">
 		</div>
 		<div class="form-group">
 			<label>Surname</label> <input type="text" name="sName"
 				class="form-control" placeholder="Write Employee Surname"
-				required="" value="${userList.surname}">
+				required="">
 		</div>
 
 		<div class="form-group">
 
 
 			<label>Date of Birth</label> <input type="date" class="form-control"
-				name="dob" pattern="mm/dd/yyyy" value="${userList.dob}">
+				name="dob">
 
 		</div>
 
 		<div class="form-group">
 			<label>Email</label> <input type="email" name="email"
 				class="form-control" placeholder="Write Employee Email"
-				required="" value="${userList.email}">
+				required="">
 		</div>
 
 
@@ -88,7 +87,7 @@
 			<label >Address</label>
 			<textarea rows="3" cols="6" class="form-control"
 				 placeholder="Write Employee Address"
-				name="address">${userList.address}
+				name="address">
 						</textarea>
 		</div>
 
@@ -98,7 +97,7 @@
 
 			<label >Department</label> <input
 				type="text" class="form-control" name="department"
-				placeholder="Write Employee Department" value="${userList.department}" >
+				placeholder="Write Employee Department" >
 		</div>
 
 
@@ -108,15 +107,15 @@
 			<label>Designation</label> <input
 				type="text" class="form-control" name="designation"
 				placeholder="Write Employee Designation"
-				 value="${userList.designation}">
+				>
 		</div>
 		
 		<div class="form-group">
 		
 		
 			<label >Date of Hired</label> <input
-				type="date" class="form-control" name="doh" pattern="mm/dd/yyyy"
-				 value="${userList.doh}">
+				type="date" class="form-control" name="doh"
+				>
 		
 		</div>
 
@@ -126,7 +125,7 @@
 			<label >Basic Salary</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Basic_Salary"
-				name="basic_salary" value="${userList.basic_salary}">
+				name="basic_salary">
 		</div>
 		
 		<div class="form-group">
@@ -153,7 +152,7 @@
 			<label >Total Overtime Amount</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Overtime Amount"
-				name="overtime_amount" value="${ov_amount}">
+				name="overtime_amount">
 		</div>
 		
 		<div class="form-group">
@@ -163,15 +162,6 @@
 				type="number" class="form-control" 
 				placeholder="Write Employee House Rent"
 				name="house_rent">
-		</div>
-		
-		<div class="form-group">
-		
-		
-			<label >House Rent</label> <input
-				type="text" class="form-control" 
-				placeholder="Write Employee House Rent"
-				name="house_reent" value="${houserent}">
 		</div>
 		
 		<div class="form-group">
@@ -205,10 +195,37 @@
 		<div class="form-group">
 		
 		
-			<label >Total Salary</label> <input
+			<label >Deduction Salary By Percentage</label> <input
+				type="text" class="form-control" 
+				placeholder="Write deduction of salary of amount"
+				name="dspercentage">
+		</div>
+		
+		<div class="form-group">
+		
+		
+			<label >Deduction Salary By Amount</label> <input
 				type="number" class="form-control" 
-				placeholder="Write Employee Other Allowances"
-				name="total_salary">
+				placeholder="Write deduction of salary of amount"
+				name="dsamount">
+		</div>
+		
+		<div class="form-group">
+		
+		
+			<label >Reason of Deduction</label> <input
+				type="text" class="form-control" 
+				placeholder="Write reason of deduction"
+				name="rod">
+		</div>
+		
+		<div class="form-group">
+		
+		
+			<label >Total Deduction Salary after Deduction</label> <input
+				type="number" class="form-control" 
+				placeholder="Write deduction of salary of amount"
+				name="total_deduction">
 		</div>
 
 

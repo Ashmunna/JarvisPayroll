@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -127,8 +128,40 @@ public class EmployeeRegistrationControlleradmin {
         model.put("userList", entityList);
         return new ModelAndView("/showUseradmin", model);
     }
-
-    
+    @PostMapping("/showUseradmin/{id}")
+    public ModelAndView getEmpById(HttpServletRequest request) {
+        Map<String, Object> model = new HashMap<>();
+        String search = request.getParameter("search");
+        long id=Long.parseLong(search);
+        Employee entityList  =  employeeService.getById(id);
+        model.put("userList", entityList);
+        return new ModelAndView("/employeeAllowance", model);
+    }
+    @PostMapping("/caculatSalary")
+    public ModelAndView caculatSalary(HttpServletRequest request) {
+    	
+    	Map<String, Object> model = new HashMap<>();
+        String search = request.getParameter("id");
+        long id=Long.parseLong(search);
+        Employee entityList  =  employeeService.getById(id);
+        model.put("userList", entityList);
+    	double basic_salary = Double.parseDouble(request.getParameter("basic_salary"));
+    	int overtime_hour = Integer.parseInt(request.getParameter("overtime_hour"));
+    	int overtime_rate = Integer.parseInt(request.getParameter("overtime_rate"));
+    	int ov_amount= overtime_hour*overtime_rate;
+    	request.setAttribute("ov_amount", String.valueOf(ov_amount));
+    	double house_rent = Integer.parseInt(request.getParameter("house_rent"));
+    	double houserent = basic_salary*(house_rent/100);
+    	System.out.println(houserent);
+    	request.setAttribute("houserent", String.valueOf(houserent));
+//    	int overtime_amount = Integer.parseInt(request.getParameter("overtime_amount"));
+//    	
+//    	int medical_allowance = Integer.parseInt(request.getParameter("medical_allowance"));
+//    	int provident_fund_allowance = Integer.parseInt(request.getParameter("provident_fund_allowance"));
+//    	int other_allowances = Integer.parseInt(request.getParameter("other_allowances"));
+//    	int total_salary = Integer.parseInt(request.getParameter("total_salary"));
+    	return new ModelAndView("/employeeAllowance",model);
+    }
     
 }
 
