@@ -152,10 +152,23 @@ public class EmployeeRegistrationControlleradmin {
     	request.setAttribute("ov_amount", String.valueOf(ov_amount));
     	double house_rent = Integer.parseInt(request.getParameter("house_rent"));
     	double houserent = basic_salary*(house_rent/100);
-    	System.out.println(houserent);
+//    	System.out.println(houserent);
     	request.setAttribute("houserent", String.valueOf(houserent));
+    	double medical_allowance = Integer.parseInt(request.getParameter("medical_allowance"));
+    	double ma = basic_salary*(medical_allowance/100);
+    	request.setAttribute("ma", String.valueOf(ma));
+    	double provident_fund_allowance = Integer.parseInt(request.getParameter("provident_fund_allowance"));
+    	double pfa = basic_salary*(provident_fund_allowance/100);
+    	request.setAttribute("pfa", String.valueOf(pfa));
+    	double other_allowances = Integer.parseInt(request.getParameter("other_allowances"));
+    	double oa = basic_salary*(other_allowances/100);
+    	request.setAttribute("oa", String.valueOf(oa));
+//    	double total_salary = Integer.parseInt(request.getParameter("total_salary"));
+    	double ts = (basic_salary + ov_amount + houserent + ma + pfa + oa);
+    	request.setAttribute("ts", String.valueOf(ts));
+    	
+    	
 //    	int overtime_amount = Integer.parseInt(request.getParameter("overtime_amount"));
-//    	
 //    	int medical_allowance = Integer.parseInt(request.getParameter("medical_allowance"));
 //    	int provident_fund_allowance = Integer.parseInt(request.getParameter("provident_fund_allowance"));
 //    	int other_allowances = Integer.parseInt(request.getParameter("other_allowances"));

@@ -159,7 +159,7 @@
 		<div class="form-group">
 		
 		
-			<label >House Rent</label> <input
+			<label >House Rent in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee House Rent"
 				name="house_rent">
@@ -168,16 +168,16 @@
 		<div class="form-group">
 		
 		
-			<label >House Rent</label> <input
+			<label >House Rent Amount</label> <input
 				type="text" class="form-control" 
 				placeholder="Write Employee House Rent"
-				name="house_reent" value="${houserent}">
+				name="houserenta" value="${houserent}">
 		</div>
 		
 		<div class="form-group">
 		
 		
-			<label >Medical Allowance</label> <input
+			<label >Medical Allowance in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Medical Allowance"
 				name="medical_allowance">
@@ -186,29 +186,57 @@
 		<div class="form-group">
 		
 		
-			<label >Provident Fund Allowance</label> <input
+			<label >Medical Allowance Amount</label> <input
+				type="text" class="form-control" 
+				placeholder="Write Employee House Rent"
+				name="maa" value="${ma}">
+		</div>
+		
+		<div class="form-group">
+		
+		
+			<label >Provident Fund Allowance in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Provident Fund Allowance"
 				name="provident_fund_allowance">
+		</div>
+		
+		<div class="form-group">
+		
+		
+			<label >Provident Fund Allowance Amount</label> <input
+				type="text" class="form-control" 
+				placeholder="Write Employee House Rent"
+				name="pfa" value="${pfa}">
 		</div>
 		
 		
 		<div class="form-group">
 		
 		
-			<label >Other Allowances</label> <input
+			<label >Other Allowances in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Other Allowances"
 				name="other_allowances">
+		</div>
+		
+			
+		<div class="form-group">
+		
+		
+			<label >Other Allowances Amount</label> <input
+				type="text" class="form-control" 
+				placeholder="Write Employee Other Allowances"
+				name="oa" value="${oa}">
 		</div>
 		
 		<div class="form-group">
 		
 		
 			<label >Total Salary</label> <input
-				type="number" class="form-control" 
+				type="text" class="form-control" 
 				placeholder="Write Employee Other Allowances"
-				name="total_salary">
+				name="total_salary"  value="${ts}" >
 		</div>
 
 
