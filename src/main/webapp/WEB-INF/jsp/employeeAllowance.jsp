@@ -67,14 +67,16 @@
 				class="form-control" placeholder="Write Employee Surname"
 				required="" value="${userList.surname}">
 		</div>
+		
+		
 
-		<div class="form-group">
+		<!-- <div class="form-group">
 
 
 			<label>Date of Birth</label> <input type="date" class="form-control"
 				name="dob" pattern="mm/dd/yyyy" value="${userList.dob}">
 
-		</div>
+		</div> -->
 
 		<div class="form-group">
 			<label>Email</label> <input type="email" name="email"
@@ -111,14 +113,14 @@
 				 value="${userList.designation}">
 		</div>
 		
-		<div class="form-group">
+	<!-- 	<div class="form-group">
 		
 		
 			<label >Date of Hired</label> <input
 				type="date" class="form-control" name="doh" pattern="mm/dd/yyyy"
 				 value="${userList.doh}">
 		
-		</div>
+		</div> -->
 
 		<div class="form-group">
 		
@@ -189,25 +191,25 @@
 			<label >Medical Allowance Amount</label> <input
 				type="text" class="form-control" 
 				placeholder="Write Employee House Rent"
-				name="maa" value="${ma}">
+				name="ma" value="${ma}">
 		</div>
 		
 		<div class="form-group">
 		
 		
-			<label >Provident Fund Allowance in Percentage</label> <input
+			<label >Transport Allowance in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Provident Fund Allowance"
-				name="provident_fund_allowance">
+				name="transport_fund_allowance">
 		</div>
 		
 		<div class="form-group">
 		
 		
-			<label >Provident Fund Allowance Amount</label> <input
+			<label >Transport Allowance Amount</label> <input
 				type="text" class="form-control" 
 				placeholder="Write Employee House Rent"
-				name="pfa" value="${pfa}">
+				name="tfa" value="${tfa}">
 		</div>
 		
 		
@@ -233,10 +235,10 @@
 		<div class="form-group">
 		
 		
-			<label >Total Salary</label> <input
+			<label >Total Gross Salary</label> <input
 				type="text" class="form-control" 
 				placeholder="Write Employee Other Allowances"
-				name="total_salary"  value="${ts}" >
+				name="ts"  value="${ts}" >
 		</div>
 
 

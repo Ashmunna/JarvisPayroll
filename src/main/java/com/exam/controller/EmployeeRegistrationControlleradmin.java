@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.exam.model.Employee;
+import com.exam.model.EmployeeAllowances;
+import com.exam.service.EmployeeAllowancesService;
 import com.exam.service.EmployeeService;
 
 
@@ -39,6 +41,9 @@ public class EmployeeRegistrationControlleradmin {
 	
 	@Autowired
     EmployeeService employeeService;
+	
+	@Autowired
+	EmployeeAllowancesService employeeAllowancesService;
     
 //    @Autowired
 //    PasswordEncoder passwordEncoder;
@@ -128,6 +133,8 @@ public class EmployeeRegistrationControlleradmin {
         model.put("userList", entityList);
         return new ModelAndView("/showUseradmin", model);
     }
+    
+    
     @PostMapping("/showUseradmin/{id}")
     public ModelAndView getEmpById(HttpServletRequest request) {
         Map<String, Object> model = new HashMap<>();
@@ -137,6 +144,8 @@ public class EmployeeRegistrationControlleradmin {
         model.put("userList", entityList);
         return new ModelAndView("/employeeAllowance", model);
     }
+    
+    
     @PostMapping("/caculatSalary")
     public ModelAndView caculatSalary(HttpServletRequest request) {
     	
@@ -157,14 +166,14 @@ public class EmployeeRegistrationControlleradmin {
     	double medical_allowance = Integer.parseInt(request.getParameter("medical_allowance"));
     	double ma = basic_salary*(medical_allowance/100);
     	request.setAttribute("ma", String.valueOf(ma));
-    	double provident_fund_allowance = Integer.parseInt(request.getParameter("provident_fund_allowance"));
-    	double pfa = basic_salary*(provident_fund_allowance/100);
-    	request.setAttribute("pfa", String.valueOf(pfa));
+    	double transport_fund_allowance = Integer.parseInt(request.getParameter("transport_fund_allowance"));
+    	double tfa = basic_salary*(transport_fund_allowance/100);
+    	request.setAttribute("tfa", String.valueOf(tfa));
     	double other_allowances = Integer.parseInt(request.getParameter("other_allowances"));
     	double oa = basic_salary*(other_allowances/100);
     	request.setAttribute("oa", String.valueOf(oa));
 //    	double total_salary = Integer.parseInt(request.getParameter("total_salary"));
-    	double ts = (basic_salary + ov_amount + houserent + ma + pfa + oa);
+    	double ts = (basic_salary + ov_amount + houserent + ma + tfa + oa);
     	request.setAttribute("ts", String.valueOf(ts));
     	
     	
@@ -173,7 +182,52 @@ public class EmployeeRegistrationControlleradmin {
 //    	int provident_fund_allowance = Integer.parseInt(request.getParameter("provident_fund_allowance"));
 //    	int other_allowances = Integer.parseInt(request.getParameter("other_allowances"));
 //    	int total_salary = Integer.parseInt(request.getParameter("total_salary"));
-    	return new ModelAndView("/employeeAllowance",model);
+    	
+    	
+
+        String fName = request.getParameter("fName");
+        String sName = request.getParameter("sName");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        String department = request.getParameter("department");
+        String designation = request.getParameter("designation");
+        String overtime_amount = request.getParameter("ov_amount");
+        String houserenta = request.getParameter("houserent");
+        String maa = request.getParameter("ma");
+        String ta = request.getParameter("tfa");
+        String othera = request.getParameter("oa");
+        String total_salary = request.getParameter("ts");
+        
+        
+        EmployeeAllowances employeeallowances = new EmployeeAllowances();
+        
+        employeeallowances.setFirst_name(fName);
+        employeeallowances.setSurname(sName);
+        employeeallowances.setEmail(email);
+        employeeallowances.setAddress(address);
+        employeeallowances.setDepartment(department);
+        employeeallowances.setDesignation(designation);
+        employeeallowances.setOvertime_amount(overtime_amount);
+        employeeallowances.setHouserenta(houserenta);
+        employeeallowances.setMaa(maa);
+        employeeallowances.setTa(ta);
+        employeeallowances.setOthera(othera);
+        employeeallowances.setTotal_salary(total_salary);
+
+      
+        employeeallowances = employeeAllowancesService.save(employeeallowances);
+        
+//        if (employee != null) {
+//            model.put("success", true);
+//            model.put("message", "Save Successful");
+//            return new ModelAndView("/employeeAllowance", model);
+//        }else {
+//            model.put("error", false);
+//            model.put("message", "Save failed");
+//            return new ModelAndView("/employeeAllowance", model);
+//        }
+        
+        return new ModelAndView("/employeeAllowance",model);
     }
     
 }
