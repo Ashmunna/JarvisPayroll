@@ -152,28 +152,10 @@
 		<div class="form-group">
 		
 		
-			<label >Total Overtime Amount</label> <input
-				type="number" class="form-control" 
-				placeholder="Write Employee Overtime Amount"
-				name="overtime_amount" value="${ov_amount}">
-		</div>
-		
-		<div class="form-group">
-		
-		
 			<label >House Rent in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee House Rent"
 				name="house_rent">
-		</div>
-		
-		<div class="form-group">
-		
-		
-			<label >House Rent Amount</label> <input
-				type="text" class="form-control" 
-				placeholder="Write Employee House Rent"
-				name="houserenta" value="${houserent}">
 		</div>
 		
 		<div class="form-group">
@@ -188,28 +170,10 @@
 		<div class="form-group">
 		
 		
-			<label >Medical Allowance Amount</label> <input
-				type="text" class="form-control" 
-				placeholder="Write Employee House Rent"
-				name="ma" value="${ma}">
-		</div>
-		
-		<div class="form-group">
-		
-		
 			<label >Transport Allowance in Percentage</label> <input
 				type="number" class="form-control" 
 				placeholder="Write Employee Provident Fund Allowance"
 				name="transport_fund_allowance">
-		</div>
-		
-		<div class="form-group">
-		
-		
-			<label >Transport Allowance Amount</label> <input
-				type="text" class="form-control" 
-				placeholder="Write Employee House Rent"
-				name="tfa" value="${tfa}">
 		</div>
 		
 		
@@ -220,6 +184,83 @@
 				type="number" class="form-control" 
 				placeholder="Write Employee Other Allowances"
 				name="other_allowances">
+		</div>
+		
+		
+		<button type="submit" class="btn btn-success  mt-sm-5  px-4">Calculate</button>
+		
+		</form>
+		
+		
+		<form action="/savesalary" method="post">
+		
+		<input type="text" name="fName"
+				class="form-control" placeholder="Write Employee First Name"
+				required="" value="${userList.first_name}" hidden="true">
+				
+		<input type="text" name="sName"
+				class="form-control" placeholder="Write Employee Surname"
+				required="" value="${userList.surname}" hidden="true">
+				
+		<input type="email" name="email"
+				class="form-control" placeholder="Write Employee Email"
+				required="" value="${userList.email}" hidden="true">
+		
+		<textarea rows="3" cols="6" class="form-control"
+				placeholder="Write Employee Address"
+				name="address" hidden="true">${userList.address} 
+						</textarea>
+		 <input
+				type="text" class="form-control" name="department"
+				placeholder="Write Employee Department" value="${userList.department}" hidden="true" >
+				
+		<input
+				type="text" class="form-control" name="designation"
+				placeholder="Write Employee Designation"
+				 value="${userList.designation}" hidden="true" >
+		
+		<input
+				type="text" class="form-control" 
+				placeholder="Write Employee Basic_Salary"
+				name="basic_salary" value="${userList.basic_salary}" hidden="true" >
+				<br>
+		
+		<div class="form-group">
+		
+			<label >Total Overtime Amount</label> <input
+				type="number" class="form-control" 
+				placeholder="Write Employee Overtime Amount"
+				name="overtime_amount" value="${ov_amount}">
+		</div>
+		
+		
+		<div class="form-group">
+		
+		
+			<label >House Rent Amount</label> <input
+				type="text" class="form-control" 
+				placeholder="Write Employee House Rent"
+				name="houserenta" value="${houserent}">
+		</div>
+		
+		
+		<div class="form-group">
+		
+		
+			<label >Medical Allowance Amount</label> <input
+				type="text" class="form-control" 
+				placeholder="Write Employee House Rent"
+				name="ma" value="${ma}">
+		</div>
+		
+		
+		<div class="form-group">
+		
+		
+			<label >Transport Allowance Amount</label> <input
+				type="text" class="form-control" 
+				placeholder="Write Employee House Rent"
+				name="tfa" value="${tfa}">
 		</div>
 		
 			
@@ -244,7 +285,7 @@
 
 
 		<button type="submit" class="btn btn-success  mt-sm-5  px-4">Save</button>
-		<button type="submit" class="btn btn-success  mt-sm-5  px-4">Calculate</button>
+		
 		<button type="submit" class="btn btn-success  mt-sm-5  px-4">Clear</button>
 	</form>
 

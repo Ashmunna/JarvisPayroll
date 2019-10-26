@@ -176,6 +176,13 @@ public class EmployeeRegistrationControlleradmin {
     	double ts = (basic_salary + ov_amount + houserent + ma + tfa + oa);
     	request.setAttribute("ts", String.valueOf(ts));
     	
+    	model.put("ov_amount", ov_amount);
+    	model.put("houserent", houserent);
+    	model.put("ma", ma);
+    	model.put("tfa", tfa);
+    	model.put("oa", oa);
+    	model.put("ts", ts);
+    	
     	
 //    	int overtime_amount = Integer.parseInt(request.getParameter("overtime_amount"));
 //    	int medical_allowance = Integer.parseInt(request.getParameter("medical_allowance"));
@@ -184,53 +191,108 @@ public class EmployeeRegistrationControlleradmin {
 //    	int total_salary = Integer.parseInt(request.getParameter("total_salary"));
     	
     	
-
-        String fName = request.getParameter("fName");
-        String sName = request.getParameter("sName");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-        String department = request.getParameter("department");
-        String designation = request.getParameter("designation");
-        String overtime_amount = request.getParameter("ov_amount");
-        String houserenta = request.getParameter("houserent");
-        String maa = request.getParameter("ma");
-        String ta = request.getParameter("tfa");
-        String othera = request.getParameter("oa");
-        String total_salary = request.getParameter("ts");
+    	
+    	
+    	
+//        String fName = request.getParameter("fName");
+//        String sName = request.getParameter("sName");
+//        String email = request.getParameter("email");
+//        String address = request.getParameter("address");
+//        String department = request.getParameter("department");
+//        String designation = request.getParameter("designation");
+//        String overtime_amount = request.getParameter("overtime_amount");
+//        String houserenta = request.getParameter("houserenta");
+//        String maa = request.getParameter("ma");
+//        String ta = request.getParameter("tfa");
+//        String othera = request.getParameter("oa");
+//        String total_salary = request.getParameter("ts");
+//        System.out.println(overtime_amount);
+//        
+//        EmployeeAllowances employeeallowances = new EmployeeAllowances();
+//        
+//        employeeallowances.setFirst_name(fName);
+//        employeeallowances.setSurname(sName);
+//        employeeallowances.setEmail(email);
+//        employeeallowances.setAddress(address);
+//        employeeallowances.setDepartment(department);
+//        employeeallowances.setDesignation(designation);
+//        employeeallowances.setOvertime_amount(Double.parseDouble(overtime_amount));
+//        employeeallowances.setHouserent(Double.parseDouble(houserenta));
+//        employeeallowances.setMa(Double.parseDouble(maa));
+//        employeeallowances.setTfa(Double.parseDouble(ta));
+//        employeeallowances.setOa(Double.parseDouble(othera));
+//        employeeallowances.setTs(Double.parseDouble(total_salary));
+//
+//      
+//        employeeallowances = employeeAllowancesService.save(employeeallowances);
+//        
+////        if (employee != null) {
+////            model.put("success", true);
+////            model.put("message", "Save Successful");
+////            return new ModelAndView("/employeeAllowance", model);
+////        }else {
+////            model.put("error", false);
+////            model.put("message", "Save failed");
+////            return new ModelAndView("/employeeAllowance", model);
+////        }
         
+    	return new ModelAndView("/employeeAllowance",model);
         
-        EmployeeAllowances employeeallowances = new EmployeeAllowances();
-        
-        employeeallowances.setFirst_name(fName);
-        employeeallowances.setSurname(sName);
-        employeeallowances.setEmail(email);
-        employeeallowances.setAddress(address);
-        employeeallowances.setDepartment(department);
-        employeeallowances.setDesignation(designation);
-        employeeallowances.setOvertime_amount(overtime_amount);
-        employeeallowances.setHouserenta(houserenta);
-        employeeallowances.setMaa(maa);
-        employeeallowances.setTa(ta);
-        employeeallowances.setOthera(othera);
-        employeeallowances.setTotal_salary(total_salary);
-
-      
-        employeeallowances = employeeAllowancesService.save(employeeallowances);
-        
-//        if (employee != null) {
-//            model.put("success", true);
-//            model.put("message", "Save Successful");
-//            return new ModelAndView("/employeeAllowance", model);
-//        }else {
-//            model.put("error", false);
-//            model.put("message", "Save failed");
-//            return new ModelAndView("/employeeAllowance", model);
-//        }
-        
-        return new ModelAndView("/employeeAllowance",model);
     }
     
-}
 
+
+
+
+@PostMapping("/savesalary")
+public ModelAndView saveSalary(HttpServletRequest request) {
+	
+	Map<String, Object> model = new HashMap<>();
+	
+	String fName = request.getParameter("fName");
+   String sName = request.getParameter("sName");
+   String email = request.getParameter("email");
+   String address = request.getParameter("address");
+   String department = request.getParameter("department");
+   String designation = request.getParameter("designation");
+   String basic_salary = request.getParameter("basic_salary");
+   String overtime_amount = request.getParameter("overtime_amount");
+   String houserenta = request.getParameter("houserenta");
+   String maa = request.getParameter("ma");
+   String ta = request.getParameter("tfa");
+   String othera = request.getParameter("oa");
+   String total_salary = request.getParameter("ts");
+//   System.out.println(overtime_amount);
+   
+   EmployeeAllowances employeeallowances = new EmployeeAllowances();
+   
+   employeeallowances.setFirst_name(fName);
+   employeeallowances.setSurname(sName);
+   employeeallowances.setEmail(email);
+   employeeallowances.setAddress(address);
+   employeeallowances.setDepartment(department);
+   employeeallowances.setDesignation(designation);
+   employeeallowances.setBasic_salary(Double.parseDouble(basic_salary));
+   employeeallowances.setOvertime_amount(Double.parseDouble(overtime_amount));
+   employeeallowances.setHouserent(Double.parseDouble(houserenta));
+   employeeallowances.setMa(Double.parseDouble(maa));
+   employeeallowances.setTfa(Double.parseDouble(ta));
+   employeeallowances.setOa(Double.parseDouble(othera));
+   employeeallowances.setTs(Double.parseDouble(total_salary));
+
+ 
+   employeeallowances = employeeAllowancesService.save(employeeallowances);
+   
+	   if (employeeallowances != null) {
+	       model.put("success", true);
+	       model.put("message", "Save Successful");
+	       return new ModelAndView("/employeeAllowance", model);
+	   }else {
+	       model.put("error", false);
+	       model.put("message", "Save failed");
+	       return new ModelAndView("/employeeAllowance", model);
+	   }
+	}
+}
 
 
